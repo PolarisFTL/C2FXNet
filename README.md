@@ -22,11 +22,26 @@
 
 ## 📖 Abstract
 
-C2FXNet is a Coarse-to-Fine Scene Expert Network for unified object detection across adverse weather conditions.
-
-It introduces a dual-level guidance mechanism consisting of a Multi-step Reasoning Router (MRR) and a Fine Scene Refinement (FSR) module, together with a Scene-aware Mixture-of-Experts (SMoE) framework.
-
-The proposed approach achieves robust detection across diverse adverse weather conditions without scene-specific training.
+Object detection in adverse weather remains challenging because severe
+degradations weaken visual quality and disrupt semantic feature representations
+across diverse scenes. Existing methods usually rely on condition-specific
+designs, which limits their ability to generalize within a unified detector. In
+this paper, we propose a Coarse-to-Fine Scene Expert Network (C2FXNet) that
+achieves unified detection through hierarchical scene guidance. Specifically,
+C2FXNet introduces a dual-level guidance mechanism consisting of a Multi-step
+Reasoning Router (MRR), which performs GRU-based recurrent scene reasoning over
+compressed multi-scale visual cues and frozen coarse scene prototypes, and a
+Fine Scene Refinement (FSR) module, which uses image-specific semantic cues to
+modulate high-level features for local variation handling. Furthermore, a
+Scene-aware Mixture-of-Experts (SMoE) dynamically combines scene-specific
+experts under the joint guidance of MRR and FSR. By coupling coarse scene
+reasoning with fine-grained semantic refinement, C2FXNet enables robust
+multi-scene detection without scene-specific training. Extensive experiments on
+RTTS, ExDark, and our newly constructed Adverse Weather Dataset (AWD)
+demonstrate that C2FXNet consistently outperforms state-of-the-art methods
+across foggy, dark, and clear conditions, reaching 63.70%, 71.14%, and 54.19%
+mAP on RTTS, ExDark, and AWD, respectively. The source code will be released at
+https://github.com/PolarisFTL/C2FXNet.
 
 ## 🚀 Code
 
